@@ -1,0 +1,18 @@
+.applicant-card {
+    position: relative;
+}
+
+.applicant-card .applicant-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #375a7f!important;
+    opacity: 0;
+    height: 100%;
+    padding: 1rem;
+    transition: all 0.25s;
+}
+
+.applicant-card.active .applicant-info {
+    opacity: 0.8;
+}

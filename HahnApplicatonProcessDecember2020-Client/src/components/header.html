@@ -1,0 +1,18 @@
+<template>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
+    <span class="navbar-brand ml-5 mb-0 h1" href="applicant">${appTitle}</span>
+    <div class="collapse navbar-collapse float-right text-right pull-right" id="navbarSupportedContent">
+      <div class="col-9"></div>
+     <div class="col-3 float-right pull-right" >
+       <ul class="navbar-nav mr-auto">
+          <li class="nav-item ${applicant.isActive ? 'active' : ''}">
+            <a class="nav-link" route-href="route: applicant;">New Applicant</a>
+          </li>
+          <li class="nav-item ${applicants.isActive ? 'active' : ''}" style="float:right!important;margin-right:0!important;" >
+            <a class="nav-link" href="applicants">Applicants</a>
+          </li>
+        </ul>
+     </div> 
+    </div>
+  </nav>
+</template>

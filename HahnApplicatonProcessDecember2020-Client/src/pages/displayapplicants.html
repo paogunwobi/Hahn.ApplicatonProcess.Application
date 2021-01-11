@@ -1,0 +1,12 @@
+<template>
+  <require from="./../components/applicant"></require>
+  <require from="./applicantlist.css"></require>
+
+    <h3 class="text-center" style="color:#375a7f!important;">Applicants</h3>
+  
+    <div class="applicant-list row">
+      <div class="col-md-4 applicant" repeat.for="applicant of applicants">
+          <applicant applicant.bind="applicant"></applicant>
+      </div>
+    </div>
+</template>

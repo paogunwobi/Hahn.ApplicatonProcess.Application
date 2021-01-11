@@ -1,0 +1,12 @@
+    .container {
+        margin-top: 2rem;
+    }
+    
+    .form-control-lg {
+        border: none;
+    }
+    
+    .error-messages {
+        color: red!important;
+        padding: 0!important;
+    }

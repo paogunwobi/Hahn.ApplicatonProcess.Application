@@ -1,0 +1,19 @@
+<template>
+  <require from="./applicant.css"></require>
+
+  <div class="card" style="background: #1d3247!important; font-size:1rem; font-weight: 400;">    
+    <div class="card-body">
+      <div class="applicant-info">
+        <p>Full Name: <span style="font-size:1.12rem; font-weight: 400; color: #fcd912!important;">${applicant.name} ${applicant.familyName} </span></p>
+      </div>
+      <p class="card-title">Address: <span style="font-size:1.12rem; font-weight: 400; color: #fcd912!important;">${applicant.address}</span> </p>
+      <p>Age: <span style="font-size:1.12rem; font-weight: 400; color: #fcd912!important;">${applicant.age}</span> </p>
+      <p>Email Address: <span style="font-size:1.12rem; font-weight: 400; color: #fcd912!important;">${applicant.emailAddress}</span> </p>
+      <p>Country Of Origin: <span style="font-size:1.12rem; font-weight: 400; color: #fcd912!important;">${applicant.countryOfOrigin}</span> </p>
+      <p>Hired: <span style="font-size:1.12rem; font-weight: 400; color: #fcd912!important;">${applicant.hired}</span> </p>
+      
+      <a route-href="route: applicant; params.bind: { id: applicant.id }" class="btn btn-success">Edit</a>
+      <button click.trigger="removeApplicant(applicant.id)" class="btn btn-outline-success">Delete</button>
+    </div>
+  </div>
+</template>

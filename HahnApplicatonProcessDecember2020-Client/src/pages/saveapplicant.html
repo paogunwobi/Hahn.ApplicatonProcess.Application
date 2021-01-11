@@ -1,0 +1,92 @@
+<template>
+  <div class="editor-page mt-4">
+    <div class="container page">
+      <h3 class="text-center" style="color:#375a7f!important;">Applicant Form</h3>
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-xs-12">
+
+          <!-- <div class="error-messages" if.bind="controller.errors">
+            <p repeat.for="error of controller.errors">
+              <span>* ${error.message}</span>
+            </p>
+          </div> -->
+
+          <!-- <ul class="error-messages">
+            <li repeat.for="key of errors | keys">${key}&nbsp;${errors[key]}</li>
+          </ul> -->
+          
+          <form>
+            <fieldset>
+              <fieldset class="form-group">
+                <div class="error-messages" if.bind="controller.errors">
+                  <p repeat.for="error of controller.errors">
+                    <span if.bind="error.message === 'Name is required.'">* ${error.message}</span>
+                  </p>
+                </div>
+                <input type="text" class="form-control form-control-lg" placeholder="Applicant Name" model.two-way="name" value.bind="name & validate">
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="error-messages" if.bind="controller.errors">
+                  <p repeat.for="error of controller.errors">
+                    <span if.bind="error.message === 'Family Name is required.'">* ${error.message}</span>
+                  </p>
+                </div>
+                <input type="text" class="form-control form-control-lg" placeholder="Applicant Family Name" model.two-way="familyName" value.bind="familyName & validate">
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="error-messages" if.bind="controller.errors">
+                  <p repeat.for="error of controller.errors">
+                    <span if.bind="error.message === 'Email Address is required.'">* ${error.message}</span>
+                  </p>
+                </div>
+                <input class="form-control form-control-lg" type="text" placeholder="Email"  model.two-way="emailAddress" value.bind="emailAddress & validate">
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="error-messages" if.bind="controller.errors">
+                  <p repeat.for="error of controller.errors">
+                    <span if.bind="error.message === 'Address is required.'">* ${error.message}</span>
+                  </p>
+                </div>
+                <textarea class="form-control form-control-lg" rows="3" placeholder="Enter Address Here" model.two-way="address" value.bind="address & validate"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="error-messages" if.bind="controller.errors">
+                  <p repeat.for="error of controller.errors">
+                    <span if.bind="error.message === 'Country Of Origin is required.'">* ${error.message}</span>
+                  </p>
+                </div>
+                <input class="form-control form-control-lg" type="text" placeholder="Country Of Origin" model.two-way="countryOfOrigin" value.bind="countryOfOrigin & validate">
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="error-messages" if.bind="controller.errors">
+                  <p repeat.for="error of controller.errors">
+                    <span if.bind="error.message === 'Age is required.'">* ${error.message}</span>
+                  </p>
+                </div>
+                <input type="number" class="form-control form-control-lg" placeholder="Enter Age" model.two-way="age" value.bind="age & validate">
+              </fieldset>
+              <fieldset class="form-group mb-5" style="font-size: 1.171875rem;line-height: 1.5;color:black!important;">
+                <p class="text-left">Hired</p>
+                <label class="mr-4 mb-2">
+                  <input type="radio" name="group3"
+                          model.bind="true"  checked.bind="hired">
+                  Yes
+                </label>
+                <label class="mb-2">
+                  <input type="radio" name="group3"
+                          model.bind="false" checked.bind="hired">
+                  No
+                </label>
+              </fieldset>
+              <button click.trigger="removeApplicant(applicant)" class="btn btn-lg btn-outline-primary" disabled.bind="controller.errors.length > 5">Reset</button>
+              <button class="btn btn-lg pull-xs-right btn-primary float-right" type="button" click.trigger="saveApplicant()" disabled.bind="!canSave">
+                Save Applicant
+              </button>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
