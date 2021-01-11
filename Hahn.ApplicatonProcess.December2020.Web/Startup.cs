@@ -29,6 +29,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
         {
             // Inject your application services
             InjectAppServices(services);
+            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); });
             // services.AddDbContext<ApplicationDbContext>(x => x.UseSqlite("Data Source=LocalDatabase.db"));
             services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("ApplicationDbContext"));
             services.AddControllers(options =>
@@ -67,7 +68,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
 
             app.UseRouting();
             // app.UseRequestLocalization();
-            // app.UseCors();
+            app.UseCors("AllowOrigin");
 
             // app.UseAuthentication();
             app.UseAuthorization();
